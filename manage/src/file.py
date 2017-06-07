@@ -7,9 +7,11 @@ Created on 2017年6月6日
 from django.http import HttpResponse  
 from django.http import StreamingHttpResponse 
 import os,sys
+import json
 def myserver(request):  
        # do something...
   #读取mongodb的文件到临时文件中  
+
     filepath_ = sys.path[0]+'\manage\\files\per.txt'
     print(filepath_)
     def file_iterator(file_name, chunk_size=262144):
@@ -21,6 +23,11 @@ def myserver(request):
              else:
                  break
         f.close()
+    if not os.path.exists(filepath_):   
+      response_data = {}  
+      response_data['result'] = 'failed'  
+      response_data['message'] = 'You messed up'  
+      return HttpResponse(json.dumps(response_data), content_type="application/json")    
     response = StreamingHttpResponse(file_iterator(filepath_))
     response['Content-Type'] = 'application/octet-stream'
     response['Content-Disposition'] = 'attachment; filename="d"'#设定传输给客户端的文件名称 
