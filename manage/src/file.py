@@ -30,6 +30,6 @@ def myserver(request):
       return HttpResponse(json.dumps(response_data), content_type="application/json")    
     response = StreamingHttpResponse(file_iterator(filepath_))
     response['Content-Type'] = 'application/octet-stream'
-    response['Content-Disposition'] = 'attachment; filename="d"'#设定传输给客户端的文件名称 
+    response['Content-Disposition'] = 'attachment; filename={}'.format(os.path.basename(filepath_))#设定传输给客户端的文件名称 
     response['Content-Length'] = ''.format(os.path.getsize(filepath_)) #传输给客户端的文件大小  
     return response
