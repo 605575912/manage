@@ -1,6 +1,6 @@
-# -*- coding: gbk -*- 
+# -*- coding: utf-8 -*- 
 '''
-Created on 2017Äê6ÔÂ6ÈÕ
+Created on 2017ï¿½ï¿½6ï¿½ï¿½6ï¿½ï¿½
 
 @author: Administrator
 '''
@@ -10,8 +10,6 @@ import os,sys
 import json
 def myserver(request):  
        # do something...
-  #¶ÁÈ¡mongodbµÄÎÄ¼şµ½ÁÙÊ±ÎÄ¼şÖĞ  
-
     filepath_ = sys.path[0]+'\manage\\files\per.txt'
     print(filepath_)
     def file_iterator(file_name, chunk_size=262144):
@@ -30,6 +28,6 @@ def myserver(request):
       return HttpResponse(json.dumps(response_data), content_type="application/json")    
     response = StreamingHttpResponse(file_iterator(filepath_))
     response['Content-Type'] = 'application/octet-stream'
-    response['Content-Disposition'] = 'attachment; filename={}'.format(os.path.basename(filepath_))#Éè¶¨´«Êä¸ø¿Í»§¶ËµÄÎÄ¼şÃû³Æ 
-    response['Content-Length'] = ''.format(os.path.getsize(filepath_)) #´«Êä¸ø¿Í»§¶ËµÄÎÄ¼ş´óĞ¡  
+    response['Content-Disposition'] = 'attachment; filename={}'.format(os.path.basename(filepath_))#ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ëµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ 
+    response['Content-Length'] = ''.format(os.path.getsize(filepath_)) #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ëµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ğ¡  
     return response

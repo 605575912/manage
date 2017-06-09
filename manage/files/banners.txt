@@ -1,0 +1,22 @@
+{
+    "banners": [
+        {
+            "id": 1,
+            "imgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496995818504&di=25c75b5e6ba30aac82db30112021f9eb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01f92757ce2d9f0000012e7eb316bb.jpg%40900w_1l_2o_100sh.jpg",
+            "jumpcontent": "",
+            "starttime": 0
+        },
+        {
+            "id": 2,
+            "imgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496995818501&di=3b289aa0dc626a3db62b602235395c20&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F19%2F62%2F85%2F82458PICSYB_1024.jpg",
+            "jumpcontent": "",
+            "starttime": 0
+        },
+        {
+            "id": 2,
+            "imgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496995818499&di=8d07d642ca4d2116e3abd9be4f8e3aad&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01acaf5722af116ac7253812b32635.jpg",
+            "jumpcontent": "",
+            "starttime": 0
+        }
+    ]
+}

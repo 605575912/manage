@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from manage.src.file import myserver 
+from manage.src.file import myserver
+from manage.src.default import defalutserver
+from manage.src.launcher import launcher
+from manage.src.banners import banners  
+from manage.src.tabs import tabs   
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^server/$', myserver),
+    url(r'^$', defalutserver),
+    url(r'^launcher/$', launcher),
+    url(r'^banner/$', banners),
+    url(r'^tabs/$', tabs),
 ]
