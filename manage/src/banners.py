@@ -13,7 +13,7 @@ def banners(request):
     filepath_ = sys.path[0]+'\manage\\files\\banners.txt'
     print(filepath_)
     def file_iterator(file_name, chunk_size=262144):
-        f = open(filepath_, mode='r', encoding='GBK')
+        f = open(file_name, mode='r', encoding='GBK')
         while True:
              c = f.read(chunk_size)
              if c:

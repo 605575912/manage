@@ -6,16 +6,56 @@
 import os,sys
 import json
 
-filepath_ = os.path.abspath('.')+'\manage\\files\per.txt'
-# print (sys.(filepath_))
+
+
+# filepath_ = sys.path[0]+'\manage\\files\\banners.txt'
+
+def file_iterator(file_name, chunk_size=262144):
+     f = open(file_name, mode='r', encoding='utf-8')
+     return f.read(chunk_size)
+     f.close()
+
+filepath_ = sys.path[0]+'\manage\\files\\banners.txt'
+if os.path.exists(filepath_):
+    textbanner=file_iterator(filepath_)
+    card={}
+    cards=[]
+    items={} 
+    cardUnit={}
+    cardUnits=[]
+    item=[]
+    cardUnits.append(items)
+    items["items"]=item
+    itemvalue={}
+    itemvalue["imgurl"]="imgurl"
+    itemvalue["content"]="content"
+    itemvalue["title"]="title"
+    itemvalue["bckimgurl"]="bckimgurl"
+    item.append(itemvalue)
+    #banners
+    f = open(filepath_, mode='r', encoding='utf-8')
+    bannerjson = json.load(f)
+#     cardUnit["banners"]=bannerjson
+    
+    cardUnit["cardUnits"]=cardUnits
+    cards.append(bannerjson)
+    cards.append(cardUnit)
+    card["cards"]=cards 
+    jsonStr = json.dumps(card) 
+    print (jsonStr)
+# setting = json.load(f)
+# family = setting['BaseSettings']['size']   
+# size = setting['fontSize']  
+# filepath_ = os.path.abspath('.')+'\manage\\files\per.txt'
+# print (setting)
  
   
 
-print('sssss%s'%('a'),'ttt')
-print (os.path.exists(filepath_))
-L = ['Bart', 'Lisa', 'Adam']
-for x in L:
-    print("hello,%s!"%x)    
+# print('sssss%s'%('a'),'ttt')
+# print (os.path.exists(filepath_))
+# L = ['Bart', 'Lisa', 'Adam']
+# for x in L:
+#     print("hello,%s!"%x)    
 # print ('{}'.format(os.path.basename(filepath_)))
 # file_object = open(filepath_, mode='r', encoding='UTF-8')
 # try:
