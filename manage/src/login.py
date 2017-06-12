@@ -20,7 +20,6 @@ def login(request):
     if not user:
        conn.close
        return resultNone('account','uer has unregister')   
-    
     token = getlogintoken(account)
     updatetokenDB(conn,account,token)
     conn.close 

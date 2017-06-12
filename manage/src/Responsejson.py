@@ -14,7 +14,8 @@ def resultNone(data,msg):#失败提示
 def resultLogin(token,user):#登录
     response_data = {} 
     response_data['result'] = 1
-    response_data['token'] = token
+#     response_data['token'] = token
+    user["token"]=(not token )and token or ''
     response_data['user'] = user    
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 def resultregister():#注册
