@@ -19,7 +19,9 @@ from manage.src.file import myserver
 from manage.src.default import defalutserver
 from manage.src.launcher import launcher
 from manage.src.banners import banners  
-from manage.src.tabs import tabs   
+from manage.src.login import login   
+from manage.src.tabs import tabs 
+from manage.src.userregister import userregister    
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^server/$', myserver),
@@ -27,4 +29,6 @@ urlpatterns = [
     url(r'^launcher/$', launcher),
     url(r'^banner/$', banners),
     url(r'^tabs/$', tabs),
+    url(r'^login/$', login),
+    url(r'^register/$', userregister),
 ]

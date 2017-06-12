@@ -38,8 +38,8 @@ def getbanner(the_page):
 #             print (m_jumpcontent[0])
             res_img = r'url\((.?.*)' #图片 
             m_img = re.findall(res_img,pic_url)
-            strinfo = re.compile('https')
-            b = strinfo.sub('http',m_img[0])
+#             strinfo = re.compile('https')
+#             b = strinfo.sub('http',m_img[0])
 #             print (m_img[0])
             data={} 
             data["id"]=1  
