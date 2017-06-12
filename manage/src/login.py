@@ -4,12 +4,11 @@ Created on 2017��6��12��
 http://192.168.30.25:8080/login/?account=000&psw=%22%22
 @author: Administrator
 '''
-import json
+
 from manage.src.userdb import * 
 from manage.src.logintoken import *
 from manage.src.Responsejson import *   
 def login(request):  
-       # do something...
     account = request.GET.get('account')
     psw = request.GET.get('psw')
     if not psw:

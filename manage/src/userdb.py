@@ -13,7 +13,7 @@ def createDB():
 #     c = conn.cursor()
     # create tables
     conn.execute('''CREATE TABLE IF NOT EXISTS users
-         (id INTEGER PRIMARY KEY, account text,location text,psw text,sex int,img text,phone int,name text,age int,token text)''')
+         (id INTEGER PRIMARY KEY, account text,location text,psw text,sex int,img text,phone text,name text,age int,token text)''')
     return conn  
 def selectDB(conn,account):
     c = conn.cursor()
@@ -23,13 +23,13 @@ def selectDB(conn,account):
     for row in rows:
         user={}
         user["location"]=(not row[2] )and row[2] or ''
-        user["sex"]=row[4]
-        user["img"]=row[5]
-        user["phone"]=row[6]
-        user["name"]=row[7]
-        user["age"]=row[8]
-        user["token"]=row[9]
-        user["account"]=row[1]
+        user["sex"]=(not row[4] )and row[4] or 0
+        user["img"]=(not row[5] )and row[5] or ''
+        user["phone"]=(not row[6] )and row[6] or ''
+        user["name"]=(not row[7] )and row[7] or ''
+        user["age"]=(not row[8] )and row[8] or 0
+        user["token"]=(not row[9] )and row[9] or ''
+        user["account"]=(not row[1] )and row[1] or ''
         return user
         break
     return None
