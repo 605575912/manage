@@ -1,64 +1,28 @@
 #coding=utf-8
 '''
 Created on 2017��6��12��
-
+http://192.168.30.25:8080/login/?account=000&psw=%22%22
 @author: Administrator
 '''
-import re
-import urllib.request  
 import json
-import time
-import os,sys
-import sqlite3
-
-from django.http import HttpResponse  
-from django.http import StreamingHttpResponse 
+from manage.src.userdb import * 
+from manage.src.logintoken import *
+from manage.src.Responsejson import *   
 def login(request):  
        # do something...
+    account = request.GET.get('account')
+    psw = request.GET.get('psw')
+    if not psw:
+       return resultNone('psw','') 
+    if not account:
+       return resultNone('account','null')  
     conn = createDB()
-    selectDB(conn)
-    filepath_ = sys.path[0]+'\manage\\files\Ads.txt'
-    print(filepath_)
-    def file_iterator(file_name, chunk_size=262144):
-        f = open(filepath_, mode='r', encoding='GBK')
-        while True:
-             c = f.read(chunk_size)
-             if c:
-                 yield c
-             else:
-                 break
-        f.close()
-    if not os.path.exists(filepath_):   
-       response_data = {}  
-       response_data['result'] = 'failed'  
-       response_data['message'] = 'You messed up'  
-       return HttpResponse(json.dumps(response_data), content_type="application/json")    
-    return HttpResponse(file_iterator(filepath_), content_type="application/json")   
- 
-def createDB():
-# test.db is a file in the working directory.
-    conn = sqlite3.connect("user.db")
+    user = selectDB(conn,account)
+    if not user:
+       conn.close
+       return resultNone('account','uer has unregister')   
     
-#     c = conn.cursor()
-    # create tables
-    conn.execute('''CREATE TABLE IF NOT EXISTS users
-         (id int primary key, sort int, name text,location text)''')
-    return conn
-#     c.execute('''CREATE TABLE book
-#          (id int primary key, 
-#           sort int, 
-#           name text, 
-#           price real, 
-#           category int,
-#           FOREIGN KEY (category) REFERENCES category(id))''')
- 
-# save the changes 
-def selectDB(conn):
-    c = conn.cursor()
-    c.execute('SELECT name FROM users ORDER BY sort')
-    
-    rows = c.fetchall()
-    #遍历数据也不变（比上一个更直接一点）
-    for row in rows:
-        #这里，可以使用键值对的方法，由键名字来获取数据
-        print ("%s %s" % (row["Id"], row["Name"]))
+    token = getlogintoken(account)
+    updatetokenDB(conn,account,token)
+    conn.close 
+    return resultLogin(token,user)
