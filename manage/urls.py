@@ -21,7 +21,8 @@ from manage.src.launcher import launcher
 from manage.src.banners import banners  
 from manage.src.login import login   
 from manage.src.tabs import tabs 
-from manage.src.userregister import userregister    
+from manage.src.userregister import userregister
+from manage.src.mine import getmine      
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^server/$', myserver),
@@ -31,4 +32,5 @@ urlpatterns = [
     url(r'^tabs/$', tabs),
     url(r'^login/$', login),
     url(r'^register/$', userregister),
+    url(r'^mine/$', getmine),
 ]

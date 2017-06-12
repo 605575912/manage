@@ -5,7 +5,6 @@ Created on 2017��6��6��
 @author: Administrator
 '''
 from django.http import HttpResponse  
-from django.http import StreamingHttpResponse 
 import os,sys
 import json
 def myserver(request):  
@@ -32,14 +31,15 @@ def myserver(request):
 #     response['Content-Length'] = ''.format(os.path.getsize(filepath_)) #������ͻ��˵��ļ���С  
 #     return response
     filepath_ = sys.path[0]+'\manage\\files\\banners.txt'
+    home_cardsfilepath_ = sys.path[0]+'\manage\\files\\home_cards.txt'
     if os.path.exists(filepath_):
         card={}
         cards=[]
         items={} 
-        cardUnit={}
-        cardUnits=[]
+#         cardUnit={}
+#         cardUnits=[]
         item=[]
-        cardUnits.append(items)
+#         cardUnits.append(items)
         items["items"]=item
         itemvalue={}
         itemvalue["imgurl"]="imgurl"
@@ -52,10 +52,13 @@ def myserver(request):
         bannerjson = json.load(f)
 #         cardUnit["banners"]=bannerjson
         
-        cardUnit["cardUnits"]=cardUnits
+#         cardUnit["cardUnits"]=cardUnits
         cards.append(bannerjson)
-        cards.append(cardUnit)
-        card["cards"]=cards 
+        home_cards = open(home_cardsfilepath_, mode='r', encoding='utf-8')
+        home_cardsjson = json.load(home_cards)
+        cards.append(home_cardsjson)
+        card["cards"]=cards
+        card["titletype"] =1 
         jsonStr = json.dumps(card) 
         print (jsonStr)
         return HttpResponse(jsonStr, content_type="application/json")  
