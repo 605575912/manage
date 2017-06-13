@@ -3,34 +3,33 @@
     "tabs": [
         {
             "id": 1,
-            "index":1,
-            "transtatus":true,
+             "index":1,
+             "transtatus":true;
             "normalimgurl": "file:///android_asset/tabimg/ic_vector_home_normal.png",
             "pressedimgurl": "file:///android_asset/tabimg/ic_vector_home_pressed.png",
-            "jumpcontent": "http://192.168.30.25:8080/server/",
-            "title": "首页"
+            "jumpcontent": "http://192.168.30.20:8080/server/",
+            "title": "棣栭〉"
         },
         {
             "id": 2,
             "normalimgurl": "file:///android_asset/tabimg/ic_vector_nearby_normal.png",
             "pressedimgurl": "file:///android_asset/tabimg/ic_vector_nearby_pressed.png",
             "jumpcontent": "",
-            "title": "附近"
+            "title": "闄勮繎"
         },
         {
             "id": 3,
             "normalimgurl": "file:///android_asset/tabimg/ic_vector_order_normal.png",
             "pressedimgurl": "file:///android_asset/tabimg/ic_vector_order_pressed.png",
             "jumpcontent": "",
-            "title": "订单"
+            "title": "璁㈠崟"
         },
         {
             "id": 4,
-            "transtatus":true,
             "normalimgurl": "file:///android_asset/tabimg/ic_vector_mine_normal.png",
             "pressedimgurl": "file:///android_asset/tabimg/ic_vector_mine_pressed.png",
-            "jumpcontent": "http://192.168.30.25:8080/mine/",
-            "title": "我的"
+            "jumpcontent": "http://192.168.30.20:8080/mine/",
+            "title": "鎴戠殑"
         }
     ]
 }
