@@ -1,6 +1,6 @@
-# -*- coding: gbk -*- 
+# -*- coding: utf-8 -*- 
 '''
-Created on 2017Äê6ÔÂ6ÈÕ
+Created on 2017å¹´6æœˆ6æ—¥
 
 @author: Administrator
 '''
@@ -8,7 +8,7 @@ from django.http import HttpResponse
 import json
 def defalutserver(request):  
        # do something...
-  #¶ÁÈ¡mongodbµÄÎÄ¼şµ½ÁÙÊ±ÎÄ¼şÖĞ  
+  #è¯»å–mongodbçš„æ–‡ä»¶åˆ°ä¸´æ—¶æ–‡ä»¶ä¸­  
     response_data = {}  
     response_data['result'] = 'failed'  
     response_data['message'] = 'You messed up'  

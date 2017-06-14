@@ -5,7 +5,6 @@ Created on 2017年6月8日
 @author: Administrator
 '''
 from django.http import HttpResponse  
-from django.http import StreamingHttpResponse 
 import os,sys
 import json
 def launcher(request):  
@@ -13,7 +12,7 @@ def launcher(request):
     filepath_ = sys.path[0]+'\manage\\files\Ads.txt'
     print(filepath_)
     def file_iterator(file_name, chunk_size=262144):
-        f = open(filepath_, mode='r', encoding='GBK')
+        f = open(filepath_, mode='r', encoding='utf-8')
         while True:
              c = f.read(chunk_size)
              if c:

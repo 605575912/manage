@@ -32,21 +32,23 @@ def myserver(request):
 #     return response
     filepath_ = sys.path[0]+'\manage\\files\\banners.txt'
     home_cardsfilepath_ = sys.path[0]+'\manage\\files\\home_cards.txt'
+    columndata = sys.path[0]+'\manage\\files\\columndata.txt'
+    itempath = sys.path[0]+'\manage\\files\\items.txt'
     if os.path.exists(filepath_):
         card={}
         cards=[]
-        items={} 
-#         cardUnit={}
-#         cardUnits=[]
-        item=[]
-#         cardUnits.append(items)
-        items["items"]=item
-        itemvalue={}
-        itemvalue["imgurl"]="imgurl"
-        itemvalue["content"]="content"
-        itemvalue["title"]="title"
-        itemvalue["bckimgurl"]="bckimgurl"
-        item.append(itemvalue)
+#         items={} 
+# #         cardUnit={}
+# #         cardUnits=[]
+#         item=[]
+# #         cardUnits.append(items)
+#         items["items"]=item
+#         itemvalue={}
+#         itemvalue["imgurl"]="imgurl"
+#         itemvalue["content"]="content"
+#         itemvalue["title"]="title"
+#         itemvalue["bckimgurl"]="bckimgurl"
+#         item.append(itemvalue)
         #banners
         f = open(filepath_, mode='r', encoding='utf-8')
         bannerjson = json.load(f)
@@ -54,11 +56,21 @@ def myserver(request):
         
 #         cardUnit["cardUnits"]=cardUnits
         cards.append(bannerjson)
+        
+        colum = open(columndata, mode='r', encoding='utf-8')
+        columjson = json.load(colum)
+        cards.append(columjson)
         home_cards = open(home_cardsfilepath_, mode='r', encoding='utf-8')
         home_cardsjson = json.load(home_cards)
         cards.append(home_cardsjson)
         card["cards"]=cards
+        
+        
+        itemtxt = open(itempath, mode='r', encoding='utf-8')
+        itemjson = json.load(itemtxt)
+#         items=[]
+#         items.append(itemjson)  
+        card["items"]=itemjson
         card["titletype"] =1 
         jsonStr = json.dumps(card) 
-        print (jsonStr)
         return HttpResponse(jsonStr, content_type="application/json")  

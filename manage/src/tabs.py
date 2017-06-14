@@ -13,7 +13,7 @@ def tabs(request):
     filepath_ = sys.path[0]+'\manage\\files\\tabs.txt'
     print(filepath_)
     def file_iterator(file_name, chunk_size=262144):
-        f = open(filepath_, mode='r', encoding='GBK')
+        f = open(filepath_, mode='r', encoding='utf-8')
         while True:
              c = f.read(chunk_size)
              if c:
