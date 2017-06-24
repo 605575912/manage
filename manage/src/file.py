@@ -33,33 +33,23 @@ def myserver(request):
     filepath_ = sys.path[0]+'\manage\\files\\banners.txt'
     home_cardsfilepath_ = sys.path[0]+'\manage\\files\\home_cards.txt'
     columndata = sys.path[0]+'\manage\\files\\columndata.txt'
+    discounttxt= sys.path[0]+'\manage\\files\\discount.txt'
     itempath = sys.path[0]+'\manage\\files\\items.txt'
     if os.path.exists(filepath_):
         card={}
         cards=[]
-#         items={} 
-# #         cardUnit={}
-# #         cardUnits=[]
-#         item=[]
-# #         cardUnits.append(items)
-#         items["items"]=item
-#         itemvalue={}
-#         itemvalue["imgurl"]="imgurl"
-#         itemvalue["content"]="content"
-#         itemvalue["title"]="title"
-#         itemvalue["bckimgurl"]="bckimgurl"
-#         item.append(itemvalue)
         #banners
         f = open(filepath_, mode='r', encoding='utf-8')
         bannerjson = json.load(f)
-#         cardUnit["banners"]=bannerjson
-        
-#         cardUnit["cardUnits"]=cardUnits
         cards.append(bannerjson)
         
         colum = open(columndata, mode='r', encoding='utf-8')
         columjson = json.load(colum)
         cards.append(columjson)
+        
+        discountdata = open(discounttxt, mode='r', encoding='utf-8')
+        discountjson = json.load(discountdata)
+        cards.append(discountjson)
         home_cards = open(home_cardsfilepath_, mode='r', encoding='utf-8')
         home_cardsjson = json.load(home_cards)
         cards.append(home_cardsjson)
