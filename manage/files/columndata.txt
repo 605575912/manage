@@ -1,23 +1,23 @@
 {
     "columnitems": [
         {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_9.png",
+            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_14.png",
             "title": "旅游",
             "jumpcontent": "'"
         },
         {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_12.png",
+            "img": "http://192.168.30.13:8080/img/trip_travel__icon_food.png",
             "title": "美食",
             "jumpcontent": "'"
         },
         {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_13.png",
+            "img": "http://192.168.30.13:8080/img/trip_travel__icon_hotel_reserve.png",
             "title": "酒店",
             "jumpcontent": "'"
         },
         {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_14.png",
-            "title": "KTV",
+            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_5.png",
+            "title": "内饰",
             "jumpcontent": "'"
         },
         {
