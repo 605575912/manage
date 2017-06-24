@@ -52,7 +52,7 @@ def myserver(request):
         cards.append(discountjson)
         home_cards = open(home_cardsfilepath_, mode='r', encoding='utf-8')
         home_cardsjson = json.load(home_cards)
-        cards.append(home_cardsjson)
+#         cards.append(home_cardsjson)
         card["cards"]=cards
         
         
