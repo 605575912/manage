@@ -1,30 +1,60 @@
-{
-    "discountdatas": [
-        {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_9.png",
-            "title": "旅游",
-            "content": "旅游",
-            "jumpcontent": "'"
-        },
-        {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_12.png",
-            "title": "美食",
-            "jumpcontent": "'"
-        },
-        {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_13.png",
-            "title": "酒店",
-            "jumpcontent": "'"
-        },
-        {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_14.png",
-            "title": "KTV",
-            "jumpcontent": "'"
-        },
-        {
-            "img": "http://192.168.30.13:8080/img/trip_travel__icon_category_15.png",
-            "title": "外卖",
-            "jumpcontent": "'"
+  {
+            "discountdatas": [
+                {
+                    "img": "https://img12.360buyimg.com/n7/jfs/t4279/350/1539228618/254067/b33dd909/58c39444N34dbe1ec.jpg",
+                    "title": "本地鸡蛋",
+                    "content": "五斤起打折",
+                    "color": "#FFF5B964",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img10.360buyimg.com/n7/jfs/t4564/106/2580096114/642688/db4e53fe/58f080afN0c784d7a.jpg",
+                    "title": "火红龙虾",
+                    "content": "百万龙虾劵",
+                    "color": "#FF35C9F2",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img10.360buyimg.com/n7/jfs/t277/193/1005339798/768456/29136988/542d0798N19d42ce3.jpg",
+                    "title": "手机专场",
+                    "content": "最高便宜1000",
+                    "color": "#EDEF4507",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img14.360buyimg.com/n7/jfs/t4219/153/2347254471/435869/26d13334/58cf7d3cN4ea1eef6.jpg",
+                    "title": "菊花",
+                    "content": "你家种的胎菊",
+                    "color": "#EDED23F4",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img14.360buyimg.com/n1/s200x200_jfs/t775/90/110148115/52846/e9007dc/54881966N3c2e9540.jpg",
+                    "title": "书籍",
+                    "content": "高考资料",
+                    "color": "#ED3B47F2",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img12.360buyimg.com/n7/jfs/t5509/225/539452170/297759/5b782319/590198a7N560a786a.jpg",
+                    "title": "家电",
+                    "content": "电视机8折",
+                    "color": "#ED9A41E4",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img13.360buyimg.com/n7/jfs/t4930/140/1058663958/584803/1a370a27/58ec37e9Na9669ac2.jpg",
+                    "title": "肉类",
+                    "content": "进口牛肉",
+                    "color": "#ED58F1DF",
+                    "jumpcontent": "'"
+                },
+                {
+                    "img": "https://img13.360buyimg.com/n7/jfs/t4054/44/156407347/177846/ddc1da2/583fc1bbN696d681b.jpg",
+                    "title": "水果系列",
+                    "content": "天天买天天送",
+                    "color": "#FF912211",
+                    "jumpcontent": "'"
+                }
+            ]
         }
-    ]
-}
