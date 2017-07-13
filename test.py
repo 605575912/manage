@@ -43,6 +43,27 @@ if os.path.exists(filepath_):
     card["cards"]=cards 
     jsonStr = json.dumps(card) 
     print (jsonStr)
+    
+import json
+import xinge_push
+
+#create XingeApp
+xinge = xinge_push.XingeApp(0, 'secret')
+
+#build your message
+msg = xinge_push.Message()
+msg.type = xinge_push.MESSAGE_TYPE_ANDROID_NOTIFICATION
+msg.title = 'some title'
+msg.content = 'some content'
+
+#call restful API
+ret_code, error_msg = xinge.PushSingleDevice('some_token', msg)
+if ret_code:
+    print ("push failed! retcode: {}, msg: {}".format(ret_code, error_msg))
+else:
+    print ("push successfully!")
+
+    
 # setting = json.load(f)
 # family = setting['BaseSettings']['size']   
 # size = setting['fontSize']  

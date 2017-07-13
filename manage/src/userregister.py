@@ -13,6 +13,7 @@ def userregister(request):
        # do something...
     account = request.GET.get('account')
     psw = request.GET.get('psw')
+    img = request.GET.get('img')
     if not psw:
        return resultNone('psw','') 
     if not account:
@@ -24,6 +25,6 @@ def userregister(request):
     if user:
        conn.close
        return resultNone('account','uer has ') 
-    addDB(conn,account,psw)
+    addDB(conn,account,psw,img)
     conn.close
     return resultregister()

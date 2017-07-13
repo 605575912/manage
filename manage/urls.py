@@ -23,7 +23,8 @@ from manage.src.login import login
 from manage.src.tabs import tabs 
 from manage.src.userregister import userregister
 from manage.src.mine import getmine      
-from manage.src.image import getimage 
+from manage.src.image import getimage
+from manage.src.music import getmusic  
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^server/$', myserver),
@@ -35,4 +36,5 @@ urlpatterns = [
     url(r'^register/$', userregister),
     url(r'^mine/$', getmine), 
     url(r'^img/.*?$', getimage),
+    url(r'^music/.*?$', getmusic),
 ]

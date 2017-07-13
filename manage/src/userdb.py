@@ -35,8 +35,8 @@ def selectDB(conn,account):
         break
     return None
  
-def addDB(conn,account,psw):
-    conn.execute('INSERT INTO users(account,psw)values('+account+','+psw+')')
+def addDB(conn,account,psw,img):
+    conn.execute('INSERT INTO users(account,psw,img)values('+account+','+psw+','+img+')')
     conn.commit()
 def updatetokenDB(conn,account,token):
     conn.execute("UPDATE users SET token = '"+token+"' WHERE account = "+account)
